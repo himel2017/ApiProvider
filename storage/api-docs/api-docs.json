@@ -1,0 +1,121 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Akij Group Admin Panel API Documentation",
+        "description": "API Documentation - Akij Group Admin Panel",
+        "contact": {
+            "email": "shakib.corp@akij.net"
+        },
+        "license": {
+            "name": "@Akij Group Admin Panel",
+            "url": "http://test.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/shipping/contact/store": {
+            "post": {
+                "tags": [
+                    "Contacts"
+                ],
+                "summary": "Store Contact",
+                "description": "Store New Contact and Gives the response",
+                "operationId": "sampleFunctionWithDoc",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Contact Name, eg; Md. Nazmus Shakib",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Contact Email, eg; shakib@testmail.com",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "subject",
+                        "in": "query",
+                        "description": "Contact Subject, eg; Welcome Email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "message",
+                        "in": "query",
+                        "description": "Contact Message, eg; Hello, Good Afternoon!",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Contact Stored Response"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/shipping/position": {
+            "get": {
+                "tags": [
+                    "Positions"
+                ],
+                "summary": "All positions",
+                "description": "Returns the list of positions",
+                "operationId": "sampleFunctionWithDoc",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/greet": {
+            "get": {
+                "tags": [
+                    "greeting"
+                ],
+                "summary": "Returns a Sample API response",
+                "description": "A sample greeting to test out the API",
+                "operationId": "sampleFunctionWithDoc",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "api_key": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Greeting API",
+            "description": "Sample package to test out the greeting APIs"
+        }
+    ]
+}
